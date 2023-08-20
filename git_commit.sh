@@ -1,4 +1,4 @@
 git init
 git add .
-git commit -m "dataset preprocessing and model training"
+git commit -m "inference with autoencoder"
 git push
