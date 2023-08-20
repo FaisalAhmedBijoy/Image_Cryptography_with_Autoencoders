@@ -28,10 +28,15 @@ def NPCR_comparision(image1, image2):
     return npcr
 
 if __name__ == '__main__':
-    # image1 = cv2.imread("images/encrypted_decrypted_images/Lena_decrypted_image.png")
-    # image2 = cv2.imread("images/input_samples/lena2.tif")
+ 
 
-    image1 = cv2.imread("images/shuffled_deshuffled_image/Lena_deshuffled_image.png")
-    image2 = cv2.imread("images/input_samples/lena1.tif")
+    image_1_path="images/encrypted_decrypted_images/Lena_decrypted_image.png"
+    image_2_path="images/input_samples/lena2.tif"
+
+    # image_1_path="images/shuffled_deshuffled_image/Lena_deshuffled_image.png"
+    # image_2_path="images/input_samples/lena1.tif"
+
+    image1 = cv2.imread(image_1_path)
+    image2 = cv2.imread(image_2_path)
     npcr_score=NPCR_comparision(image1, image2)
     print("NPCR score: ",npcr_score)
