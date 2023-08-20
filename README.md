@@ -12,7 +12,7 @@ python shuffling_deshuffling_images.py
  Input image
 
 
-![](images\input_samples\lena_gray.gif)
+![](images/input_samples/lena_gray.gif)
 
 Shuffle image 
 
@@ -28,11 +28,11 @@ python image_encryption_decryption.py
 ```
 encryption of image
 
-![](images\encrypted_decrypted_images\Lena_encrypted_image.png)
+![](images/encrypted_decrypted_images/Lena_encrypted_image.png)
 
 decryption of image
 
-![](images\encrypted_decrypted_images\Lena_decrypted_image.png)
+![](images/encrypted_decrypted_images/Lena_decrypted_image.png)
 
 ## 4. Dataset preparation 
 ```bash
@@ -47,7 +47,7 @@ python auto_encoder.py
 
 Model architecture
 
-![](images\model_architecture_and_performances\autoencoder_architecture.png)
+![](images/model_architecture_and_performances/autoencoder_architecture.png)
 
 
 Model training
@@ -56,14 +56,16 @@ python train.py
 ```
 Model loss performance graph
 
-![](images\model_architecture_and_performances\loss_graph.png)
+![](images/model_architecture_and_performances/loss_graph.png)
 
 ## 6. Inferencing the model
+
+original_vs_compressed_vs_reconstruction
 
 ```bash
 python inference.py
 ```
-![](images\model_architecture_and_performances\original_vs_compressed_vs_reconstruction.png)
+![](images/model_architecture_and_performances/original_vs_compressed_vs_reconstruction.png)
 
 ## 7. Performance metrics
 
@@ -81,18 +83,18 @@ python nnumber_of_pixel_change_rate_NPCR_comparision.py
 
 image 1 output
 
-![](images\NPCR_images\NPCR_difference_1_LENA.png)
+![](images/NPCR_images/NPCR_difference_1_LENA.png)
 
 image 2 output
 
-![](images\NPCR_images\NPCR_difference_2_LENA.png)
+![](images/NPCR_images/NPCR_difference_2_LENA.png)
 
 - Unified Average Changing Intensity (UACI)
 
 ```bash
 python unified_average_changing_intensity_UACI_comparision.py
 ```
-![](images\UACI_images\UACI_difference_LENA.png)
+![](images/UACI_images/UACI_difference_LENA.png)
 
 ## 8. Salt and paper noise
     
@@ -102,4 +104,4 @@ python unified_average_changing_intensity_UACI_comparision.py
 
 Noisy image
 
-   ![](images\noisy_images\lena_noisy.png)
+   ![](images/noisy_images/lena_noisy.png)
