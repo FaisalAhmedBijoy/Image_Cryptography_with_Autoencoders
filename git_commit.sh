@@ -1,4 +1,4 @@
 git init
 git add .
-git commit -m "git commit"
+git commit -m "code refactoring"
 git push
