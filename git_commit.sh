@@ -1,4 +1,4 @@
 git init
 git add .
-git commit -m "code refactoring"
+git commit -m "salt and paper noise code added"
 git push
