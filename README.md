@@ -34,11 +34,10 @@ decryption of image
 
 ![](images\encrypted_decrypted_images\Lena_decrypted_image.png)
 
-## 4. Dataset preparation
-    
-    ```bash
-    python data_loader.py
-    ```
+## 4. Dataset preparation 
+```bash
+python data_loader.py
+```
 
 ## 5. Autoencoder for image encryption and decryption
 
@@ -78,8 +77,14 @@ python structural_similarity_SSIM_calculation.py
 ```bash
 python nnumber_of_pixel_change_rate_NPCR_comparision.py
 ```
-NPCR computation
+- NPCR computation
+
+image 1 output
+
 ![](images\NPCR_images\NPCR_difference_1_LENA.png)
+
+image 2 output
+
 ![](images\NPCR_images\NPCR_difference_2_LENA.png)
 
 - Unified Average Changing Intensity (UACI)
