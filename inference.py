@@ -16,7 +16,7 @@ if __name__ == '__main__':
     reconstructed_image = decoder.predict(compressed_image)
     # Visualize original and reconstructed images
     
-    plt.figure(figsize=(10, 10))
+    plt.figure(figsize=(30, 30))
     plt.subplot(1, 3, 1)
     plt.title('Original image')
     plt.imshow(input_image.reshape(256, 256), cmap='gray')

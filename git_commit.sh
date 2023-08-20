@@ -1,4 +1,4 @@
 git init
 git add .
-git commit -m "inference with autoencoder"
+git commit -m "update the readme file"
 git push
