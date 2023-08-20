@@ -1,76 +1,70 @@
-import cv2
+import os
 import numpy as np
-from generate_chaotic_map_sequence import logistic_map
+import tensorflow as tf
+from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D, Flatten, Reshape
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from sklearn.model_selection import train_test_split
 
-def shuffle_image(image, S):
-    """
-    Shuffle the input image using a chaotic map generated in step 4.1.
-    """
-    N = image.shape[0]
-    shuffling_matrix = np.zeros((N, N))
-    for i in range(N):
-        for j in range(N):
-            shuffling_matrix[i][j] = int(S[i] * N)
-    shuffled_image = np.zeros_like(image)
-    for i in range(N):
-        row = image[i]
-        max_row = np.max(row)
-        max_col = np.max(shuffling_matrix[i])
-        if max_row > max_col:
-            shifted_row = np.roll(row, int(-max_col))
-        else:
-            shifted_row = np.roll(row, int(max_col))
-        shuffled_image[i] = shifted_row
-    return shuffled_image
+# Define constants
+input_shape = (256, 256, 1)
+batch_size = 32
+epochs = 5
+data_dir = 'datasets/test'  # Update with your dataset directory
 
-def deshuffle_image(image, S):
-    """
-    Deshuffle the input image using a chaotic map generated in step 4.1.
-    """
-    N = image.shape[0]
-    shuffling_matrix = np.zeros((N, N))
-    for i in range(N):
-        for j in range(N):
-            shuffling_matrix[i][j] = int(S[i] * N)
-    deshuffled_image = np.zeros_like(image)
-    for i in range(N):
-        row = image[i]
-        max_row = np.max(row)
-        max_col = np.max(shuffling_matrix[i])
-        if max_row > max_col:
-            shifted_row = np.roll(row, int(max_col))
-        else:
-            shifted_row = np.roll(row, int(-max_col))
-        deshuffled_image[i] = shifted_row
-    return deshuffled_image
+# Load and preprocess the dataset
+image_paths = [os.path.join(data_dir, filename) for filename in os.listdir(data_dir)]
+images = []
 
-def image_shuffling_deshuffling_generation(input_image_path, output_shuffle_image_path, output_deshuffle_image_path):
-    
-    # read input image
-    image = cv2.imread(input_image_path, 0)
-    print('image shape: ', image.shape)
-    
-    # generate chaotic sequence
-    S = logistic_map(x0=0.5, l=3.9, N=image.shape[0] * image.shape[1])
-    print('chaotic sequence shape: ', len(S))
+for image_path in image_paths:
+    img = load_img(image_path, color_mode='grayscale', target_size=input_shape[:2])
+    img_array = img_to_array(img) / 255.0  # Normalize pixel values to [0, 1]
+    images.append(img_array)
 
-    # shuffle the image
-    shuffled_image = shuffle_image(image, S)
-    cv2.imshow('input image', image)
-    cv2.imshow('shuffled_image', shuffled_image)
-    cv2.imwrite(output_shuffle_image_path, shuffled_image)
+images = np.array(images)
 
-    # deshuffle the image
-    deshuffled_image = deshuffle_image(shuffled_image, S)
-    cv2.imshow('deshuffled_image', deshuffled_image)
-    cv2.imwrite(output_deshuffle_image_path, deshuffled_image)
+# Split dataset into training and validation sets
+train_images, val_images = train_test_split(images, test_size=0.2, random_state=42)
+print('Training shape: ', train_images.shape)
+print('Validation shape: ', val_images.shape)
 
-    cv2.waitKey()
-    cv2.destroyAllWindows()
 
-if __name__=='__main__':
-   
-    input_image_path = 'images/input_samples/lena1.tif'
-    output_shuffle_image_path = 'images/shuffled_deshuffled_image/Lena_shuffled_image.png'
-    output_deshuffle_image_path = 'images/shuffled_deshuffled_image/Lena_deshuffled_image.png'
-    image_shuffling_deshuffling_generation(input_image_path, output_shuffle_image_path, output_deshuffle_image_path)
+# Define input shape
+input_img = Input(shape=input_shape)
+
+
+# Define encoder layers
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(input_img)
+x = MaxPooling2D((4, 4), padding='same')(x)
+x = Conv2D(64, (3, 3), activation='relu', padding='same')(x)
+x = MaxPooling2D((4, 4), padding='same')(x)
+encoded = Conv2D(128, (3, 3), activation='relu', padding='same')(x)
+
+# Define decoder layers
+x = Conv2D(64, (3, 3), activation='relu', padding='same')(encoded)
+x = UpSampling2D((4, 4))(x)
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+x = UpSampling2D((4, 4))(x)
+decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x)
+
+# Define autoencoder model
+autoencoder = Model(input_img, decoded, name='autoencoder')
+print(autoencoder.summary())
+
+# ... Rest of the architecture ...
+
+# Define autoencoder model
+autoencoder = Model(input_img, decoded, name='autoencoder')
+autoencoder.compile(optimizer='adam', loss='mean_squared_error')
+
+# Train the autoencoder
+history=autoencoder.fit(train_images, 
+                        train_images, 
+                        epochs=epochs, 
+                        batch_size=batch_size, 
+                        validation_data=(val_images, val_images))
+
+# Save the trained model
+autoencoder.save('autoencoder_model.h5')
+
+print("Training complete.")
