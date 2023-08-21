@@ -1,6 +1,11 @@
 # Deep_learning_in_image_Cryptography
 Deep learning in image Cryptography
 
+## Environment setup
+```bash
+conda env create --file environment.yml
+```
+
 ## 1. Chaotic map sequence generation
 ```bash
 python generate_chaotic_map_sequence.py
