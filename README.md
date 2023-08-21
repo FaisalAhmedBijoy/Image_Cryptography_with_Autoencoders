@@ -66,7 +66,17 @@ original_vs_compressed_vs_reconstruction
 ```bash
 python inference.py
 ```
-![](images/model_architecture_and_performances/original_vs_compressed_vs_reconstruction.png)
+original image
+
+![](images/model_architecture_and_performances/original_image.png)
+
+encoder compressed image
+
+![](images/model_architecture_and_performances/compressed_encoded_image.png)
+
+decoder decompressed image
+
+![](images/model_architecture_and_performances/decompressed_decoded_image.png)
 
 ## 7. Performance metrics
 
