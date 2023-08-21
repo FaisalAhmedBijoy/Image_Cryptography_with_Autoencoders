@@ -7,7 +7,9 @@ if __name__ == '__main__':
     # Use encoder to compress input image
     dataset_dir = 'datasets/test'
     saved_model_path = 'logs/autoencoder_model.h5'
-    saved_original_vs_compressed_vs_reconstruction_path = 'images/model_architecture_and_performances/original_vs_compressed_vs_reconstruction.png'
+    saved_original_image_path = 'images/model_architecture_and_performances/original_image.png'
+    saved_compressed_encoded_image_path = 'images/model_architecture_and_performances/compressed_encoded_image.png'
+    saved_decompressed_decoded_image_path = 'images/model_architecture_and_performances/decompressed_decoded_image.png'
     train_images, val_images = load_data(dataset_dir)
 
     input_image = val_images[0]
@@ -31,18 +33,20 @@ if __name__ == '__main__':
     print('decoded data shape: ', decoded_data.shape)
 
     # Visualize original and reconstructed images
-    plt.figure(figsize=(20, 20))
-    plt.subplot(1, 3, 1)
+
     plt.title('original image: 256x256')
     plt.imshow(input_image.reshape(256, 256), cmap='gray')
+    plt.savefig(saved_original_image_path, dpi=500)
 
-    plt.subplot(1, 3, 2)
+
+
     plt.title('encoded compressed image: 16x16')
     plt.imshow(encoded_data.reshape(16,16,128)[:,:,0], cmap='gray')
+    plt.savefig(saved_compressed_encoded_image_path, dpi=500)
 
-    plt.subplot(1, 3, 3)
+  
     plt.title('decoded reconstructed image: 256x256')
     plt.imshow(decoded_data.reshape(256, 256), cmap='gray')
+    plt.savefig(saved_decompressed_decoded_image_path, dpi=500)
 
-    plt.savefig(saved_original_vs_compressed_vs_reconstruction_path, dpi=500)
     # plt.show()
