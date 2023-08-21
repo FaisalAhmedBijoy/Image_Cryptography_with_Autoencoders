@@ -13,7 +13,7 @@ def visualize_training_performance(history,save_loss_graph_filepath):
 
 if __name__=='__main__':
     
-    epochs = 200
+    epochs = 2
     batch_size = 32
     input_image_shape = (256, 256, 1)
     dataset_dir='datasets/test'
@@ -33,6 +33,6 @@ if __name__=='__main__':
     # Save the trained model
     autoencoder.save(saved_model_path)
     print("Model training saved to " + saved_model_path)
-    visualize_training_performance(history,save_loss_graph_filepath)
+    # visualize_training_performance(history,save_loss_graph_filepath)
   
    
