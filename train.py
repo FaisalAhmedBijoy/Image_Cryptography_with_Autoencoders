@@ -13,7 +13,7 @@ def visualize_training_performance(history,save_loss_graph_filepath):
 
 if __name__=='__main__':
     
-    epochs = 5
+    epochs = 200
     batch_size = 32
     input_image_shape = (256, 256, 1)
     dataset_dir='datasets/test'
