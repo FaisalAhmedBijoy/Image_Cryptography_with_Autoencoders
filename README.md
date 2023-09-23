@@ -1,12 +1,13 @@
 # Deep_learning_in_image_Cryptography
 Deep learning in image Cryptography
 
-This repository contains code for image encryption and decryption using chaotic map sequence and autoencoder. It also includes code for generating chaotic map sequences, shuffling and deshuffling images, preparing datasets, and computing performance metrics
+Iimage encryption and decryption using chaotic map sequence and autoencoder. The repository includes code for generating chaotic map sequences, shuffling and deshuffling images, preparing datasets, and computing performance metrics
 ## Environment setup
 ```bash
 conda env create --file environment.yml
 ```
-Install packages
+**Install packages**
+
 ```bash
 keygen==0.0.3
 matplotlib==3.3.3
@@ -33,16 +34,16 @@ To shuffle and deshuffle an image, run the following command:
 ```bash 
 python shuffling_deshuffling_images.py
 ```
- Input image
+**Input image**
 
 <img src="images/input_samples/lena_gray.gif" width="256" height="256">
 <!-- ![](images/input_samples/lena_gray.gif) -->
 
-Shuffle image 
+**Shuffle image** 
 
 ![](images/shuffled_deshuffled_image/Lena_shuffled_image.png)
 
-Deshuffle image
+**Deshuffle image**
 
 ![](images/shuffled_deshuffled_image/Lena_deshuffled_image.png)
 
@@ -51,11 +52,11 @@ To encrypt and decrypt an image using chaotic map sequence, run the following co
 ```bash
 python image_encryption_decryption.py
 ```
-encryption of image
+**Encryption of image**
 
 ![](images/encrypted_decrypted_images/Lena_encrypted_image.png)
 
-decryption of image
+**Decryption of image**
 
 ![](images/encrypted_decrypted_images/Lena_decrypted_image.png)
 
@@ -71,35 +72,35 @@ To use the autoencoder for image encryption and decryption, run the following co
 python auto_encoder.py
 ```
 
-Model architecture
+**Model architecture**
 
 ![](images/model_architecture_and_performances/autoencoder_architecture.png)
 
 
-Model training
+**Model training**
 ```bash
 python train.py
 ```
-Model loss performance graph
+**Model loss performance graph**
 
 ![](images/model_architecture_and_performances/loss_graph.png)
 
 ## 6. Inferencing the model
 
-original_vs_compressed_vs_reconstruction
+*original_vs_compressed_vs_reconstruction*
 
 ```bash
 python inference.py
 ```
-original image
+**Original image**
 
 ![](images/model_architecture_and_performances/original_image.png)
 
-encoder compressed image
+**encoder compressed image**
 
 ![](images/model_architecture_and_performances/compressed_encoded_image.png)
 
-decoder decompressed image
+**Decoder decompressed image**
 
 ![](images/model_architecture_and_performances/decompressed_decoded_image.png)
 
@@ -117,11 +118,11 @@ python nnumber_of_pixel_change_rate_NPCR_comparision.py
 ```
 - NPCR computation
 
-image 1 output
+**image 1 output**
 
 ![](images/NPCR_images/NPCR_difference_1_LENA.png)
 
-image 2 output
+**image 2 output**
 
 ![](images/NPCR_images/NPCR_difference_2_LENA.png)
 
@@ -138,6 +139,6 @@ python unified_average_changing_intensity_UACI_comparision.py
    python salt_and_pepper_noise.py
 ```
 
-Noisy image
+**Noisy image**
 
-   ![](images/noisy_images/lena_noisy.png)
+![](images/noisy_images/lena_noisy.png)
