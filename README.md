@@ -1,4 +1,4 @@
-# Deep_learning_in_image_Cryptography
+# Image_Cryptography_with_Autoencoders
 Deep learning in image Cryptography
 
 Image encryption and decryption using a chaotic map sequence and an autoencoder The repository includes code for generating chaotic map sequences, shuffling and deshuffling images, preparing datasets, and computing performance metrics.
