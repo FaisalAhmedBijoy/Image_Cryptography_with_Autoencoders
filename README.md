@@ -1,7 +1,8 @@
 # Deep_learning_in_image_Cryptography
 Deep learning in image Cryptography
 
-Iimage encryption and decryption using chaotic map sequence and autoencoder. The repository includes code for generating chaotic map sequences, shuffling and deshuffling images, preparing datasets, and computing performance metrics
+Image encryption and decryption using a chaotic map sequence and an autoencoder The repository includes code for generating chaotic map sequences, shuffling and deshuffling images, preparing datasets, and computing performance metrics.
+
 ## Environment setup
 ```bash
 conda env create --file environment.yml
