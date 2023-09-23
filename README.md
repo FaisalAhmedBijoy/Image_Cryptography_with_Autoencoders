@@ -6,7 +6,23 @@ This repository contains code for image encryption and decryption using chaotic 
 ```bash
 conda env create --file environment.yml
 ```
+Install packages
+```bash
+keygen==0.0.3
+matplotlib==3.3.3
+numpy==1.23.1
+numpy==1.23.2
+opencv_python==4.4.0.46
+scikit_learn==0.23.2
+skimage==0.0
+tensorflow==2.3.0
+```
 
+To install the required packages, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
 ## 1. Chaotic map sequence generation
 To generate the chaotic map sequence, run the following command:
 ```bash
