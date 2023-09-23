@@ -8,18 +8,19 @@ conda env create --file environment.yml
 ```
 
 ## 1. Chaotic map sequence generation
+To generate the chaotic map sequence, run the following command:
 ```bash
 python generate_chaotic_map_sequence.py
 ```
 ## 2. Shuffle and Deshuffle image
-
+To shuffle and deshuffle an image, run the following command:
 ```bash 
 python shuffling_deshuffling_images.py
 ```
  Input image
 
-
-![](images/input_samples/lena_gray.gif)
+<img src="images/input_samples/lena_gray.gif" width="256" height="256">
+<!-- ![](images/input_samples/lena_gray.gif) -->
 
 Shuffle image 
 
@@ -30,6 +31,7 @@ Deshuffle image
 ![](images/shuffled_deshuffled_image/Lena_deshuffled_image.png)
 
 ## 3. Encryption and Decryption of image using chaotic map sequence
+To encrypt and decrypt an image using chaotic map sequence, run the following command:
 ```bash
 python image_encryption_decryption.py
 ```
@@ -42,12 +44,13 @@ decryption of image
 ![](images/encrypted_decrypted_images/Lena_decrypted_image.png)
 
 ## 4. Dataset preparation 
+To prepare the dataset, run the following command:
 ```bash
 python data_loader.py
 ```
 
 ## 5. Autoencoder for image encryption and decryption
-
+To use the autoencoder for image encryption and decryption, run the following command:
 ```bash
 python auto_encoder.py
 ```
