@@ -36,17 +36,18 @@ To shuffle and deshuffle an image, run the following command:
 python shuffling_deshuffling_images.py
 ```
 **Input image**
-
-<img src="images/input_samples/lena_gray.gif" width="256" height="256">
+<!-- 
+<img src="images/input_samples/lena_gray.gif" width="256" height="256"> -->
+<img src="images/input_samples/faisal.jpg">
 <!-- ![](images/input_samples/lena_gray.gif) -->
 
 **Shuffle image** 
 
-![](images/shuffled_deshuffled_image/Lena_shuffled_image.png)
+![](images/shuffled_deshuffled_image/faisal_shuffled_image.png)
 
 **Deshuffle image**
 
-![](images/shuffled_deshuffled_image/Lena_deshuffled_image.png)
+![](images/shuffled_deshuffled_image/faisal_deshuffled_image.png)
 
 ## 3. Encryption and Decryption of image using chaotic map sequence
 To encrypt and decrypt an image using chaotic map sequence, run the following command:
@@ -55,11 +56,11 @@ python image_encryption_decryption.py
 ```
 **Encryption of image**
 
-![](images/encrypted_decrypted_images/Lena_encrypted_image.png)
+![](images/encrypted_decrypted_images/faisal_encrypted_image.png)
 
 **Decryption of image**
 
-![](images/encrypted_decrypted_images/Lena_decrypted_image.png)
+![](images/encrypted_decrypted_images/faisal_decrypted_image.png)
 
 ## 4. Dataset preparation 
 To prepare the dataset, run the following command:
@@ -121,18 +122,18 @@ python nnumber_of_pixel_change_rate_NPCR_comparision.py
 
 **image 1 output**
 
-![](images/NPCR_images/NPCR_difference_1_LENA.png)
+![](images/NPCR_images/NPCR_difference_1_faisal.png)
 
 **image 2 output**
 
-![](images/NPCR_images/NPCR_difference_2_LENA.png)
+![](images/NPCR_images/NPCR_difference_2_faisal.png)
 
 - Unified Average Changing Intensity (UACI)
 
 ```bash
 python unified_average_changing_intensity_UACI_comparision.py
 ```
-![](images/UACI_images/UACI_difference_LENA.png)
+![](images/UACI_images/UACI_difference_faisal.png)
 
 ## 8. Salt and paper noise
     
@@ -142,4 +143,4 @@ python unified_average_changing_intensity_UACI_comparision.py
 
 **Noisy image**
 
-![](images/noisy_images/lena_noisy.png)
+![](images/noisy_images/faisal_noisy.png)
