@@ -70,7 +70,7 @@ def image_shuffling_deshuffling_generation(input_image_path, output_shuffle_imag
 
 if __name__=='__main__':
    
-    input_image_path = 'images/input_samples/lena1.tif'
-    output_shuffle_image_path = 'images/shuffled_deshuffled_image/Lena_shuffled_image.png'
-    output_deshuffle_image_path = 'images/shuffled_deshuffled_image/Lena_deshuffled_image.png'
+    input_image_path = 'images/input_samples/faisal_2.jpg'
+    output_shuffle_image_path = 'images/shuffled_deshuffled_image/faisal_2_shuffled_image.png'
+    output_deshuffle_image_path = 'images/shuffled_deshuffled_image/faisal_2_deshuffled_image.png'
     image_shuffling_deshuffling_generation(input_image_path, output_shuffle_image_path, output_deshuffle_image_path)

@@ -45,9 +45,9 @@ def image_decrypted_image(encrypted_image,chaotic_map_sequence,image_decrypted_p
 if __name__ == '__main__':
     x0 = 0.5
     l = 3.75
-    image_path='images/input_samples/lena2.tif'
-    image_encrypted_path='images/encrypted_decrypted_images/Lena_encrypted_image.png'
-    image_decrypted_path='images/encrypted_decrypted_images/Lena_decrypted_image.png'
+    image_path='images/input_samples/faisal.jpg'
+    image_encrypted_path='images/encrypted_decrypted_images/faisal_encrypted_image.png'
+    image_decrypted_path='images/encrypted_decrypted_images/faisal_decrypted_image.png'
     image,chaotic_map_sequence=chaotic_map_sequece_generation(image_path,x0, l)
     encrypted_image=image_encryption_generation(image,chaotic_map_sequence,image_encrypted_path)
     decrypted_image=image_decrypted_image(encrypted_image,chaotic_map_sequence,image_decrypted_path)

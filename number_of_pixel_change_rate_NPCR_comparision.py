@@ -32,14 +32,14 @@ def NPCR_comparision(image1, image2,output_diff_image_1_path,output_diff_image_2
 if __name__ == '__main__':
  
 
-    image_1_path="images/encrypted_decrypted_images/Lena_decrypted_image.png"
-    image_2_path="images/input_samples/lena2.tif"
+    image_1_path="images/encrypted_decrypted_images/faisal_decrypted_image.png"
+    image_2_path="images/input_samples/faisal.jpg"
 
     # image_1_path="images/shuffled_deshuffled_image/Lena_deshuffled_image.png"
     # image_2_path="images/input_samples/lena1.tif"
 
-    output_diff_image_1_path="images/NPCR_images/NPCR_difference_1_LENA.png"
-    output_diff_image_2_path="images/NPCR_images/NPCR_difference_2_LENA.png"
+    output_diff_image_1_path="images/NPCR_images/NPCR_difference_1_faisal.png"
+    output_diff_image_2_path="images/NPCR_images/NPCR_difference_2_faisal.png"
 
     image1 = cv2.imread(image_1_path)
     image2 = cv2.imread(image_2_path)

@@ -21,8 +21,8 @@ def add_salt_and_pepper_noise(image, amount):
 
 if __name__ == '__main__':
     # Load the image
-    image_path = 'images/input_samples/lena2.tif'
-    output_noisy_image_path='images/noisy_images/lena_noisy.png'
+    image_path = 'images/input_samples/faisal.jpg'
+    output_noisy_image_path='images/noisy_images/faisal_noisy.png'
     image = cv2.imread(image_path)
 
     # Add salt and pepper noise with a noise amount of 0.02 (2% of pixels)

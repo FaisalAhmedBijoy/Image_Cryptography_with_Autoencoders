@@ -23,9 +23,9 @@ def UACI_comparision(image1, image2,saved_UACI_image_path):
 
 if __name__ == '__main__':
 
-    image_1_path="images/encrypted_decrypted_images/Lena_decrypted_image.png"
-    image_2_path="images/input_samples/lena2.tif"
-    saved_UACI_image_path="images/UACI_images/UACI_difference_LENA.png"
+    image_1_path="images/encrypted_decrypted_images/faisal_decrypted_image.png"
+    image_2_path="images/input_samples/faisal.jpg"
+    saved_UACI_image_path="images/UACI_images/UACI_difference_faisal.png"
 
     # image_1_path="images/shuffled_deshuffled_image/Lena_deshuffled_image.png"
     # image_2_path="images/input_samples/lena1.tif"
